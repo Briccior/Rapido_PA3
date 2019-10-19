@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="01b2c557-6a02-4893-a09f-02595953f660" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IntelliJ/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IntelliJ/rapido_p1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IntelliJ/rapido_p1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rapido_p1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rapido_p1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rapido_p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rapido_p2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
