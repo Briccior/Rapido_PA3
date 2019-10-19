@@ -42,9 +42,7 @@ public class rapido_p1{
 
         //System.out.println("How much is " + firstRandom + " times " + secondRandom);
         //response = scnr.nextInt();
-        if (decision == 5){
-            decision = generateNumber()%4 + 1;
-        }
+        if (decision == 5) decision = generateNumber()%4 + 1;
 
         switch (decision){
             case 1:answer =  firstRandom + secondRandom;
@@ -69,22 +67,23 @@ public class rapido_p1{
             System.out.println("Sorry wrong answer, next question.");
             return 0;
         }
-        else {
-          switch (cheer) {
-                case 0: System.out.println("Very Good!");
-                break;
-                case 1: System.out.println("Excellent!");
-                break;
-                case 2: System.out.println("Nice work!");
-                break;
-                case 3: System.out.println("Keep up the good work!");
-                break;
-                default: System.out.println("Error!");
-          }
+        else generateResponse(cheer);
         return 1;
         }
+    public static void generateResponse(int cheer){
+        switch (cheer){
+        case 0:System.out.println("Very Good!");
+        break;
+        case 1:System.out.println("Excellent!");
+        break;
+        case 2:System.out.println("Nice work!");
+        break;
+        case 3:System.out.println("Keep up the good work!");
+        break;
+        default:System.out.println("Error!");
+        }
+        return;
     }
-
     public static int add(int firstRandom, int secondRandom){
         Scanner scnr = new Scanner(System.in);
         int response;
@@ -93,7 +92,6 @@ public class rapido_p1{
         response = scnr.nextInt();
         return response;
     }
-
     public static int multiply(int firstRandom, int secondRandom){
         Scanner scnr = new Scanner(System.in);
         int response;
@@ -102,7 +100,6 @@ public class rapido_p1{
         response = scnr.nextInt();
         return response;
     }
-
     public static int subtract(int firstRandom, int secondRandom){
         Scanner scnr = new Scanner(System.in);
         int response;
@@ -111,7 +108,6 @@ public class rapido_p1{
         response = scnr.nextInt();
         return response;
     }
-
     public static int divide(int firstRandom, int secondRandom){
         Scanner scnr = new Scanner(System.in);
         int response;
@@ -121,7 +117,28 @@ public class rapido_p1{
         response = scnr.nextInt();
         return response;
     }
+    public static int difficulty(){
+        Scanner scnr = new Scanner(System.in);
+        int difficulty;
+        System.out.println("Please choose difficulty: (1-4)");
+        difficulty = scnr.nextInt();
+        return difficulty;
+    }
+    public static int decision(){
+        Scanner scnr = new Scanner(System.in);
+        int decision;
 
+        System.out.println("Please pick what type of problem you would like to solve\n" +
+                "(1) Addition\n" +
+                "(2) Multiplication\n" +
+                "(3) Subtraction\n" +
+                "(4) Division\n" +
+                "(5) Random\n" +
+                "(1-5 only): ");
+        decision = scnr.nextInt();
+
+        return decision;
+    }
     public static void main(String[] args) {
 
         Scanner scnr = new Scanner(System.in);
@@ -136,24 +153,16 @@ public class rapido_p1{
         while (choice ==  'y' || choice == 'Y') {
             score = 0;
 
-            System.out.println("Please choose difficulty: (1-4)");
-            difficulty = scnr.nextInt();
-
-            System.out.println("Please pick what type of problem you would like to solve\n" +
-                    "(1) Addition\n" +
-                    "(2) Multiplication\n" +
-                    "(3) Subtraction\n" +
-                    "(4) Division\n" +
-                    "(5) Random\n" +
-                    "(1-5 only): ");
-            decision = scnr.nextInt();
+            difficulty = difficulty();
+            decision = decision();
 
             for (i = 0; i < TRIES; i++) {
                 if (question(difficulty, decision) > 0) score++;
             }
             //System.out.println("Your score is: " + score);
             avg = (score / TRIES) * 100;
-            //System.out.println(avg);
+            System.out.println("You got " + (int)score + " right and " + (10 - (int)score) + " wrong");
+            System.out.println("Your average is: " + avg);
             if (avg >= 75) System.out.println("Congratulations, you are ready to go to the next level!");
             else System.out.println("Please ask your teacher for extra help.");
 
